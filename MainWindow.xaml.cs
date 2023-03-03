@@ -72,7 +72,6 @@ namespace WpfApp2
             line2.StrokeThickness = 2;
 
             // Add the line to a Canvas object
-
             canvas.Children.Clear();
             canvas.Children.Add(line);
             canvas.Children.Add(line2);
