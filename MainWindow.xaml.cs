@@ -31,7 +31,8 @@ namespace WpfApp2
             InitializeComponent();
             canvas.MouseMove += Canvas_MouseMove;
             
-            
+
+
 
         }
 
@@ -41,7 +42,10 @@ namespace WpfApp2
         {
             // Get the position of the mouse cursor.
             Point mousePos = e.GetPosition(canvas);
-
+            double canvasWidth = canvas.ActualWidth;
+            double canvasHeight = canvas.ActualHeight;
+            double scalefactorx = canvasWidth / 1920;
+            double scalefactory = canvasHeight / 1080;
             // Update the text block with the mouse position.
             mousePosTextBlock.Text = string.Format("Mouse Position: X={0}, Y={1}", mousePos.X, mousePos.Y);
 
@@ -53,14 +57,16 @@ namespace WpfApp2
             // Create a new Line object
             Line line = new Line();
             Line line2 = new Line();
+            
 
             // Set the start and end points of the line
-            line.X1 = 630;
+            line.X1 = (int)(960*scalefactorx);
             line.Y1 = mousePos.Y;
             line.X2 = mousePos.X;
             line.Y2 = mousePos.Y;
+
             line2.X1 = mousePos.X;
-            line2.Y1 = 315;
+            line2.Y1 = (int)(544*scalefactory);
             line2.X2 = mousePos.X;
             line2.Y2 = mousePos.Y;
 
